@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_marginLeft="16dp"
+              android:layout_marginRight="16dp"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        android:text="Demo App"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/diu_text_grey"
+        android:text="Diuit UI Kit is an open source framework of customizable UI components for use with the Diuit API designed to get messaging tested and integrated quickly. "/>
+
+    <Button
+        android:id="@+id/goToChatsListActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/msg_sending_bg"
+        android:textColor="@color/white"
+        android:text="Demo UI Kit"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/diu_text_grey"
+        android:text="We also provider other functions in Diuit API"/>
+
+    <Button
+        android:id="@+id/goToJoinChatActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/msg_sending_bg"
+        android:textColor="@color/white"
+        android:text="Join A Chat"/>
+
+    <Button
+        android:id="@+id/goToRegisterPushServiceActivityBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/msg_sending_bg"
+        android:textColor="@color/white"
+        android:text="Using Push Notification"/>
+
+</LinearLayout>
