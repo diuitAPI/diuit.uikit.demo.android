@@ -52,11 +52,11 @@ In Quick Start, we list all the components that will be used in Diuit UI Kit. It
 
 | ClassName                   | Type           | Default Attributes                        | Example                               |   
 ----------------------------- | -------------- | ----------------------------------------- | ------------------------------------- |
-| DiuitChatsRecyclerView      | RelativeLayout | R.style.DiuitChatsRecyclerViewDefault     | [R.layout.activity_chats_list](https://github.com/zxcvbnius/MyDiuitUIDemoApp/blob/develop/app/src/main/res/layout/activity_chats_list.xml)          |
-| DiuitMessagesListView       | RelativeLayout | R.style.DiuitMessagesListViewDefault      | [R.layout.activity_messages_list](https://github.com/zxcvbnius/MyDiuitUIDemoApp/blob/develop/app/src/main/res/layout/activity_messages_list.xml)       |
-| DiuitGroupChatSettingView   | RelativeLayout | R.style.DiuitGroupChatSettingViewDefault  | [R.layout.activity_group_chat_setting](https://github.com/zxcvbnius/MyDiuitUIDemoApp/blob/develop/app/src/main/res/layout/activity_group_chat_setting.xml)  |
-| DiuitParticipantSettingView | RelativeLayout | R.style.DiuitParticipantSettingViewDefault| [R.layout.activity_direct_chat_setting](https://github.com/zxcvbnius/MyDiuitUIDemoApp/blob/develop/app/src/main/res/layout/activity_direct_chat_setting.xml) |
-| DiuitMessagePreviewFactory  | RelativeLayout | NULL                                      | [R.layout.activity_preview](https://github.com/zxcvbnius/MyDiuitUIDemoApp/blob/develop/app/src/main/res/layout/activity_preview.xml)             |
+| DiuitChatsRecyclerView      | RelativeLayout | R.style.DiuitChatsRecyclerViewDefault     | [R.layout.activity_chats_list](https://github.com/diuitAPI/diuit.uikit.demo.android/tree/master/app/src/main/res/layout/activity_chats_list.xml)          |
+| DiuitMessagesListView       | RelativeLayout | R.style.DiuitMessagesListViewDefault      | [R.layout.activity_messages_list](https://github.com/diuitAPI/diuit.uikit.demo.android/tree/master/app/src/main/res/layout/activity_messages_list.xml)       |
+| DiuitGroupChatSettingView   | RelativeLayout | R.style.DiuitGroupChatSettingViewDefault  | [R.layout.activity_group_chat_setting](https://github.com/diuitAPI/diuit.uikit.demo.android/tree/master/app/src/main/res/layout/activity_group_chat_setting.xml)  |
+| DiuitParticipantSettingView | RelativeLayout | R.style.DiuitParticipantSettingViewDefault| [R.layout.activity_direct_chat_setting](https://github.com/diuitAPI/diuit.uikit.demo.android/tree/master/app/src/main/res/layout/activity_direct_chat_setting.xml) |
+| DiuitMessagePreviewFactory  | RelativeLayout | NULL                                      | [R.layout.activity_preview](https://github.com/diuitAPI/diuit.uikit.demo.android/tree/master/app/src/main/res/layout/activity_preview.xml)             |
 
 
 
