@@ -26,7 +26,7 @@ repositories {
 }  
 ```
 
-2. Add `compile 'com.duolc.diuitapi:messageui:0.1.5'` to the dependencies of your project
+2. Add `compile 'com.duolc.diuitapi:messageui:0.1.6'` to the dependencies of your project
 3. In the Android Studio Menu: Tools -> Android -> Sync Project with Gradle Files
 
 
