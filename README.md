@@ -122,7 +122,7 @@ There are three main pages: Chat List Page, Message List Page, and Chat Setting 
 
 You can customize attributes from xml.
 
-```java
+```xml
 <com.duolc.diuitapi.messageui.page.DiuitChatsRecyclerView
 android:id="@+id/diuitChatListView"
 android:layout_width="match_parent"
@@ -135,7 +135,7 @@ app:diuTitleTextColor="@color/black">
 
 > All Attributes of DiuitChatsRecyclerView
 
-```java
+```xml
 <resources>
 <declare-styleable name="DiuitChatsRecyclerView">
 <attr name="colorBackground" format="color"/>
@@ -220,7 +220,7 @@ DiuitMessagesListView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE);
 
 > All Attributes of DiuitMessagesListView
 
-```java
+```xml
 <resources>
 <declare-styleable name="DiuitMessagesListView">
 <attr name="colorBackground" format="color"/>
@@ -338,7 +338,7 @@ diuitTypingView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE);
 
 > All the Attributes of DiuitMessagesListView
 
-```java
+```xml
 <declare-styleable name="DiuitTypingView">
 <attr name="diuTypingViewWidth" format="dimension|integer"/>
 <attr name="diuTypingViewHeight" format="dimension|integer"/>
@@ -386,7 +386,7 @@ It is important to provide a setting page for users to manage chat rooms. Theref
 
 You can customize attributes from xml.
 
-```java
+```xml
 <com.duolc.diuitapi.messageui.setting.DiuitGroupChatSettingView
 android:id="@+id/diuitSettingView"
 android:layout_width="match_parent"
@@ -407,7 +407,7 @@ chatSettingView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE);
 
 > All Attributes of DiuitGroupChatSettingView
 
-```Java
+```xml
 <declare-styleable name="DiuitGroupChatSettingView">
 <attr name="colorBackground" format="color"/>
 <attr name="diuListDivider" format="dimension"/>
@@ -531,7 +531,7 @@ chatSettingView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE);
 
 > All Attributes of DiuitParticipantSettingView
 
-```Java
+```xml
 <declare-styleable name="DiuitParticipantSettingView">
 <attr name="colorBackground" format="color"/>
 <attr name="diuListDivider" format="dimension"/>
@@ -645,7 +645,7 @@ diuitChatView(R.style.YOUR_CUSTOMIZED_STYLE);
 
 > All Attributes of DiuitChatView
 
-```java
+```xml
 <declare-styleable name="DiuitChatView">
 <attr name="diuChatBackground" format="reference"/>
 <attr name="diuChatMinHeight" format="dimension"/>
@@ -735,7 +735,7 @@ diuitMessageView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE).bindMessage(DiuitM
 
 > All Attributes of DiuitChatView
 
-```Java
+```xml
 <declare-styleable name="DiuitMessageView">
 <attr name="diuMsgBackground" format="reference"/>
 <attr name="diuMsgMinHeight" format="dimension"/>
@@ -896,7 +896,7 @@ DiuitMemberView parses the DiuitUser object. Check whether the user's meta conta
 
 > All Attributes of DiuitMemberView
 
-```Java
+```xml
 <declare-styleable name="DiuitUserView">
 <attr name="diuItemBackground" format="reference"/>
 <attr name="diuItemMinHeight" format="dimension"/>
