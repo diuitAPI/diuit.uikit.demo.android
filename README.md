@@ -124,12 +124,12 @@ You can customize attributes from xml.
 
 ```xml
 <com.duolc.diuitapi.messageui.page.DiuitChatsRecyclerView
-android:id="@+id/diuitChatListView"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-app:colorBackground="@color/white"
-app:diuListDivider="1dp"
-app:diuTitleTextColor="@color/black">
+	android:id="@+id/diuitChatListView"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	app:colorBackground="@color/white"
+	app:diuListDivider="1dp"
+	app:diuTitleTextColor="@color/black">
 </com.duolc.diuitapi.messageui.page.DiuitChatsRecyclerView>
 ```
 
