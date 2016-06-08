@@ -19,11 +19,11 @@ This document was updated at: 2016-06-06 07:28:00+00
 1.  Navigate to your build.gradle file at the app level (not project level) and ensure that you include the following:
 
 ```java
-repositories {  
-    maven {  
-      url "https://dl.bintray.com/duolc/maven"  
-    }  
-}  
+repositories {
+    maven {
+      url "https://dl.bintray.com/duolc/maven"
+    }
+}
 ```
 
 2. Add `compile 'com.duolc.diuitapi:messageui:0.1.6'` to the dependencies of your project
@@ -33,9 +33,9 @@ repositories {
 
 # Features
 
-There are several main component we provide in Diuit UI Kit,  
+There are several main component we provide in Diuit UI Kit,
 
-1. Page: The entire page view, which usually an extension from RelativeLayout. Developers can use xml to set up attributes or use the instance of the view to add or remove views directly.  
+1. Page: The entire page view, which usually an extension from RelativeLayout. Developers can use xml to set up attributes or use the instance of the view to add or remove views directly.
 
 2. ItemView: For [DiuitUser](http://api.diuit.com/doc/en/guideline.html#user), [DiuitChat](http://api.diuit.com/doc/en/guideline.html#chat) and [DiuitMessage](http://api.diuit.com/doc/en/guideline.html#class-message), we provide ItemView to help developers quickly generate view components.
 
@@ -50,7 +50,7 @@ In Quick Start, we list all the components that will be used in Diuit UI Kit. It
 
 ## Page
 
-| ClassName                   | Type           | Default Attributes                        | Example                               |   
+| ClassName                   | Type           | Default Attributes                        | Example                               |
 ----------------------------- | -------------- | ----------------------------------------- | ------------------------------------- |
 | DiuitChatsRecyclerView      | RelativeLayout | R.style.DiuitChatsRecyclerViewDefault     | [R.layout.activity_chats_list](https://github.com/diuitAPI/diuit.uikit.demo.android/tree/master/app/src/main/res/layout/activity_chats_list.xml)          |
 | DiuitMessagesListView       | RelativeLayout | R.style.DiuitMessagesListViewDefault      | [R.layout.activity_messages_list](https://github.com/diuitAPI/diuit.uikit.demo.android/tree/master/app/src/main/res/layout/activity_messages_list.xml)       |
@@ -96,7 +96,7 @@ DiuitMessageContentFactory.bindMessage().image().setAttribute().load()
 | ClassName                   | Default Attributes                         | Description                  |
 ----------------------------- | ------------------------------------------ | ---------------------------- |
 | DiuitTypingView             | R.style.DiuitChatViewDefault               | If receiving user.typing event, DiuitMessagesListViewAdapter  will show this typing view autonatically in 1-to-1 chat |
-| DiuitImageView              | ImageView                                  | Make ImageView circular by calling circle()|              
+| DiuitImageView              | ImageView                                  | Make ImageView circular by calling circle()|
 |DiuitPullToLoadMoreListView  | R.style.DiuitPullToLoadMoreListViewDefault | pull to load more messages                 |
 
 
@@ -118,24 +118,24 @@ There are three main pages: Chat List Page, Message List Page, and Chat Setting 
 
 ## DiuitChatsRecyclerView
 
-<image src="./images/DiuitChatsRecyclerView.png"/>  
+<image src="./images/DiuitChatsRecyclerView.png"/>
 
-You can customize attributes from xml.  
+You can customize attributes from xml.
 
-```java
-<com.duolc.diuitapi.messageui.page.DiuitChatsRecyclerView  
-android:id="@+id/diuitChatListView"  
-android:layout_width="match_parent"  
-android:layout_height="match_parent"
-app:colorBackground="@color/white"
-app:diuListDivider="1dp"
-app:diuTitleTextColor="@color/black">  
-</com.duolc.diuitapi.messageui.page.DiuitChatsRecyclerView>  
+```xml
+<com.duolc.diuitapi.messageui.page.DiuitChatsRecyclerView
+	android:id="@+id/diuitChatListView"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	app:colorBackground="@color/white"
+	app:diuListDivider="1dp"
+	app:diuTitleTextColor="@color/black">
+</com.duolc.diuitapi.messageui.page.DiuitChatsRecyclerView>
 ```
 
 > All Attributes of DiuitChatsRecyclerView
 
-```java  
+```xml
 <resources>
 <declare-styleable name="DiuitChatsRecyclerView">
 <attr name="colorBackground" format="color"/>
@@ -151,9 +151,9 @@ app:diuTitleTextColor="@color/black">
 </resources>
 ```
 
-You can dynamically use the view object with:  
+You can dynamically use the view object with:
 
-```java  
+```java
 DiuitChatsRecyclerView diuitChatsRecyclerView = (DiuitChatsRecyclerView) this.findViewById(R.id.diuitChatListView);
 diuitChatsRecyclerView.bindChats(diuitChats, new DiuitChatsRecyclerViewAdapter.OnItemClickListener() {
 @Override
@@ -165,7 +165,7 @@ public void onItemClick(DiuitChat diuitChat) {
 
 Or custimize the adapter
 
-```java  
+```java
 DiuitChatsRecyclerView diuitChatsRecyclerView = (DiuitChatsRecyclerView) this.findViewById(R.id.diuitChatListView);
 diuitChatsRecyclerView.bindChatsByAdapter(new LinearLayoutManager(ctx), new RecyclerView.Adapter() {
 @Override
@@ -190,29 +190,29 @@ diuitChatsRecyclerView.getTitleView().setVisibility(View.GONE);
 
 ## DiuitMessagesListView
 
-<image src="./images/DiuitMessagesRecyclerView.png"/>  
+<image src="./images/DiuitMessagesRecyclerView.png"/>
 
 DiuitMessagesListView which contains input layout, title layout and message list view is slightly more complicated. We register a receiving message listener and handle different type messages automatically.
 Less flexible but convenience.
 
 
-You can customize attributes from xml.  
+You can customize attributes from xml.
 
 ```java
-<com.duolc.diuitapi.messageui.page.DiuitMessagesListView  
-android:id="@+id/diuitChatListView"  
-android:layout_width="match_parent"  
+<com.duolc.diuitapi.messageui.page.DiuitMessagesListView
+android:id="@+id/diuitChatListView"
+android:layout_width="match_parent"
 android:layout_height="match_parent"
 app:colorBackground="@color/white"
 app:diuListDivider="1dp"
 app:diuTitleElevation="1dp"
-app:diuTitleTextColor="@color/black">  
-</com.duolc.diuitapi.messageui.page.DiuitMessagesListView>  
+app:diuTitleTextColor="@color/black">
+</com.duolc.diuitapi.messageui.page.DiuitMessagesListView>
 ```
 
 You also can dynamically adjust the attributes of view by calling `setAttributes()`
 
-```java  
+```java
 DiuitMessagesListView DiuitMessagesListView = (DiuitMessagesListView) this.findViewById(R.id.view);
 DiuitMessagesListView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE);
 ```
@@ -220,7 +220,7 @@ DiuitMessagesListView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE);
 
 > All Attributes of DiuitMessagesListView
 
-```java  
+```xml
 <resources>
 <declare-styleable name="DiuitMessagesListView">
 <attr name="colorBackground" format="color"/>
@@ -285,26 +285,26 @@ DiuitMessagesListView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE);
 
 You can bind a chat object by calling `bind()`
 
-```java  
+```java
 DiuitMessagesListView.bind(DiuitChat);
 ```
 
 In addition, you can set up the amount of displayed messages while fetching from server, by default the number of displayed message is 10.
 
-```java  
+```java
 DiuitMessagesListView.setFetchCountForMessages(count);
 ```
 
 DiuitMessagesListView will show all messages by default. You can also call the function `setIgnoreSystemMessages()` to filter out those system messages you don't want them to show up.
-  
 
-```java  
+
+```java
 DiuitMessagesListView.setIgnoreSystemMessages(DiuitSystemType.KICK, DiuitSystemType.UPDATE_META, DiuitSystemType.UPDATE_WHITELIST)
 ```
 
 In the end , you have to call `load()` to load your settings.
 
-```java  
+```java
 DiuitMessagesListView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE).bind(DiuitChat).load();
 ```
 
@@ -319,26 +319,26 @@ If you don't want to show typing indicator in a one-on-one chat, you can use the
 
 ```Java
 DiuitMessagesListView.enableDefaultTypingIndicatorUI(false)
-```  
+```
 
-Also, you can use `setTypingIndicatorTimer(long millis)` to set up the period between two `user.typing` system messages.  
+Also, you can use `setTypingIndicatorTimer(long millis)` to set up the period between two `user.typing` system messages.
 
 
 ```Java
 DiuitMessagesListView.setTypingIndicatorTimer(5000)
-```  
+```
 
 
 You also can dynamically adjust the attributes of view by calling `setAttributes()`
 
-```java  
+```java
 DiuitTypingView diuitTypingView = (DiuitTypingView) this.findViewById(R.id.view);
 diuitTypingView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE);
 ```
 
 > All the Attributes of DiuitMessagesListView
 
-```java  
+```xml
 <declare-styleable name="DiuitTypingView">
 <attr name="diuTypingViewWidth" format="dimension|integer"/>
 <attr name="diuTypingViewHeight" format="dimension|integer"/>
@@ -377,16 +377,16 @@ DiuitMessagesListView.getTypingIndicatorView()
 
 
 ## DiuitChatSettingView
-It is important to provide a setting page for users to manage chat rooms. Therefore, we also provide `DiuitGroupChatSettingView` and `DiuitParticipantSettingView` as the setting page for group chat and direct(1-one-1) chat.  
+It is important to provide a setting page for users to manage chat rooms. Therefore, we also provide `DiuitGroupChatSettingView` and `DiuitParticipantSettingView` as the setting page for group chat and direct(1-one-1) chat.
 
 
 ### DiuitGroupChatSettingView
 
-<image src="./images/DiuitGroupChatSettingView.png"/>  
+<image src="./images/DiuitGroupChatSettingView.png"/>
 
-You can customize attributes from xml.  
+You can customize attributes from xml.
 
-```java
+```xml
 <com.duolc.diuitapi.messageui.setting.DiuitGroupChatSettingView
 android:id="@+id/diuitSettingView"
 android:layout_width="match_parent"
@@ -399,7 +399,7 @@ app: diuTitleText="Setting Page">
 
 You also can dynamically adjust the attributes of view by calling `setAttributes()`
 
-```java  
+```java
 DiuitGroupChatSettingView chatSettingView = (DiuitGroupChatSettingView) this.findViewById(R.id.view);
 chatSettingView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE);
 ```
@@ -407,7 +407,7 @@ chatSettingView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE);
 
 > All Attributes of DiuitGroupChatSettingView
 
-```Java
+```xml
 <declare-styleable name="DiuitGroupChatSettingView">
 <attr name="colorBackground" format="color"/>
 <attr name="diuListDivider" format="dimension"/>
@@ -493,13 +493,13 @@ chatSettingView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE);
 
 You can bind a chat object by calling `bindChat()`
 
-```java  
+```java
 diuitGroupChatSettingView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE).bindChat(DiuitChat);
 ```
 
 Calling `load()` to load your settings.
 
-```java  
+```java
 diuitGroupChatSettingView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE).bindChat(DiuitChat).load();
 ```
 
@@ -508,7 +508,7 @@ diuitGroupChatSettingView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE).bindChat(
 
 <image src="./images/DiuitParticipantSettingView.png"/>
 
-You can customize attributes from xml.  
+You can customize attributes from xml.
 
 ```java
 <com.duolc.diuitapi.messageui.setting.DiuitParticipantSettingView
@@ -523,7 +523,7 @@ app: diuTitleText="Setting Page">
 
 You also can dynamically adjust the attributes of view by calling `setAttributes()`
 
-```java  
+```java
 DiuitParticipantSettingView chatSettingView = (DiuitParticipantSettingView) this.findViewById(R.id.view);
 chatSettingView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE);
 ```
@@ -531,7 +531,7 @@ chatSettingView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE);
 
 > All Attributes of DiuitParticipantSettingView
 
-```Java
+```xml
 <declare-styleable name="DiuitParticipantSettingView">
 <attr name="colorBackground" format="color"/>
 <attr name="diuListDivider" format="dimension"/>
@@ -608,13 +608,13 @@ chatSettingView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE);
 
 You can bind a chat object by calling `bindChat()`
 
-```java  
+```java
 diuitParticipantSettingView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE).bindChat(DiuitChat);
 ```
 
 Calling `load()` to load your settings.
 
-```java  
+```java
 diuitParticipantSettingView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE).bindChat(DiuitChat).load();
 ```
 
@@ -628,7 +628,7 @@ For DiuitUser，DiuitChat, and DiuitMessage, we provide ItemView for different t
 ## DiuitChatView
 
 
-<image src="./images/DiuitChatView.png"/>  
+<image src="./images/DiuitChatView.png"/>
 
 In DiuitChatView, we parse the meta of DiuitChat by default. We will use the value of `name` and `url` as the chat name and icon url, As the following format:
 
@@ -638,14 +638,14 @@ diuitChat.meta => { "name" : "ChatRoomName", "url" : "http://iconLink", ...}
 
 You can also dynamically adjust the attributes of view by calling `setAttributes()`
 
-```java  
+```java
 DiuitChatView diuitChatView = (DiuitChatView) this.findViewById(R.id.view);
 diuitChatView(R.style.YOUR_CUSTOMIZED_STYLE);
 ```
 
 > All Attributes of DiuitChatView
 
-```java
+```xml
 <declare-styleable name="DiuitChatView">
 <attr name="diuChatBackground" format="reference"/>
 <attr name="diuChatMinHeight" format="dimension"/>
@@ -690,13 +690,13 @@ diuitChatView(R.style.YOUR_CUSTOMIZED_STYLE);
 
 You can bind a chat object by calling `bindChat()`
 
-```java  
+```java
 diuitChatView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE).bindChat(DiuitChat);
 ```
 
 Calling `load()` to load your settings.
 
-```java  
+```java
 diuitChatView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE).bindChat(DiuitChat).load();
 ```
 
@@ -706,8 +706,8 @@ diuitChatView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE).bindChat(DiuitChat).l
 
 DiuitMessageView contains user's display name, icon, message meta and DiuitMessageContentFactory. By default, DiuitMessageView parses the DiuitMessage object, check whether the sender's meta contains `name` and `url` or not, and use the value of `name` and `url` as the displayname and sender icon link.
 
-<image src="./images/DiuitMessageViewText.png"/>  
-<image src="./images/DiuitMessageViewText1.png"/>  
+<image src="./images/DiuitMessageViewText.png"/>
+<image src="./images/DiuitMessageViewText1.png"/>
 
 ```java
 diuitUser.meta => { "name" : "Sender Name", "url" : "http://userIconLink", ...}
@@ -715,27 +715,27 @@ diuitUser.meta => { "name" : "Sender Name", "url" : "http://userIconLink", ...}
 
 You can also dynamically adjust the attributes of view by calling `setAttributes()`
 
-```java  
+```java
 DiuitMessageView diuitMessageView = (DiuitMessageView) this.findViewById(R.id.view);
 diuitMessageView(R.style.YOUR_CUSTOMIZED_STYLE);
 ```
 
 You can bind a chat object by calling `bindMessage()`
 
-```java  
+```java
 diuitMessageView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE).bindMessage(DiuitMessage);
 ```
 
 Calling `load()`
 
-```java  
+```java
 diuitMessageView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE).bindMessage(DiuitMessage).load();
 ```
 
 
 > All Attributes of DiuitChatView
 
-```Java
+```xml
 <declare-styleable name="DiuitMessageView">
 <attr name="diuMsgBackground" format="reference"/>
 <attr name="diuMsgMinHeight" format="dimension"/>
@@ -896,7 +896,7 @@ DiuitMemberView parses the DiuitUser object. Check whether the user's meta conta
 
 > All Attributes of DiuitMemberView
 
-```Java
+```xml
 <declare-styleable name="DiuitUserView">
 <attr name="diuItemBackground" format="reference"/>
 <attr name="diuItemMinHeight" format="dimension"/>
@@ -936,20 +936,20 @@ DiuitMemberView parses the DiuitUser object. Check whether the user's meta conta
 
 You can customize attributes from xml or use Java code
 
-```java  
+```java
 DiuitMemberView diuitMemberView = (DiuitMemberView) this.findViewById(R.id.view);
 diuitMemberView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE);
 ```
 
 You can bind a user object by calling `bindUser()`
 
-```java  
+```java
 diuitMessageView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE).bindUser(DiuitUser);
 ```
 
 Call `load()` to load your settings.
 
-```java  
+```java
 diuitMessageView.setAttributes(R.style.YOUR_CUSTOMIZED_STYLE).bindUser(DiuitUser).load();
 ```
 
@@ -969,7 +969,7 @@ To handle file transfer in chat room, use DiuitMessageDownloadTask to download f
 DiuitMessageDownloadTask(Context ctx, DiuitMessage diuitMessage)
 ```
 
-DiuitMessageDownloadTask parses the DiuitMessage object by default. Check whether the meta contains `name` and `desc `, `mime `, and use the value of `name`, `desc `, `mime ` as the file name, description and the mimetype of the file.  
+DiuitMessageDownloadTask parses the DiuitMessage object by default. Check whether the meta contains `name` and `desc `, `mime `, and use the value of `name`, `desc `, `mime ` as the file name, description and the mimetype of the file.
 
 You can call `setAllowedNetworkTypes()` to decide the type of network when downloading files.
 
