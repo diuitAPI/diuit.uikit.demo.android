@@ -4,7 +4,7 @@
 Diuit UI Kit is an open source framework of customizable UI components for using Diuit Messaging API, which is designed to build messaging feature into any mobile apps quickly. This repository contains the entire UI library for modern messaging apps. If you want to see how the UI looks like or how Diuit API works, please refer to our [Demo App].
 
 
-This document was updated at: 2016-06-06 07:28:00+00
+This document was updated at: 2016-09-09 08:18:00+00
 
 
 ## Prerequisites
@@ -26,7 +26,7 @@ repositories {
 }
 ```
 
-2. Add `compile 'com.duolc.diuitapi:messageui:0.1.9'` to the dependencies of your project
+2. Add `compile 'com.duolc.diuitapi:messageui:0.1.16'` to the dependencies of your project
 3. In the Android Studio Menu: Tools -> Android -> Sync Project with Gradle Files
 
 
